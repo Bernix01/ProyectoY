@@ -38,24 +38,65 @@
 38|Batman|1989|Tim Burton|Michael Keaton|Action|0|http://www.amazon.com/Batman-MICHAEL-KEATON/dp/0790729652|https://www.youtube.com/watch?v=HlsM2_8u_mk|http://ecx.images-amazon.com/images/I/41SYDPY4YPL._SY445_.jpg
 39|Batman: The Movie|1966|Leslie H. Martinson|Adam West|Classics|0|http://www.amazon.co.uk/Batman-The-Movie-Adam-West/dp/B000063KMO|N/A|http://ecx.images-amazon.com/images/I/81j0OztcjaL._SL1500_.jpg
 40|Batman and Robin: The Serial Collection|1949|Spencer Gordon Bennet|Robert Lowery|Classics|0|http://www.amazon.com/Batman-Robin-Complete-Serial-Collection/dp/B0007G89FU|https://www.youtube.com/watch?v=7lCaFs0cU48|http://ecx.images-amazon.com/images/I/51Z7fqhIhfL._SY445_.jpg
-41|
-42|
-43|
-44|
-45|
-46|
-47|
-48|
-49|
-50|
-51|
-52|
-53|
-54|
-55|
-56|
-57|
-58|
-59|
-60|
+41|Superman: The Movie|1978|Richard Donner|Christopher Reeve|Action|0|http://www.amazon.com/Superman-The-Movie-Christopher-Reeve/dp/B000059Z8J|https://www.youtube.com/watch?v=U6oa87Vd0R0|http://ecx.images-amazon.com/images/I/51WJGR5R79L._SY445_.jpg
+42|Superman the Animated Series: A Little Piece of Home|1996|Toshihiko Masuda|Tim Daly|Animated|0|http://www.amazon.com/Superman-Animated-Series-Little-Mini-DVD/dp/B0006IGWS0|https://www.youtube.com/watch?v=kM-DBPeicco|http://ecx.images-amazon.com/images/I/51XZVHPRA5L._SY445_.jpg
+43|Superman IV: The Quest for Peace|1987|Richard Donner|Christopher Reeve|Action|0|http://www.amazon.com/Superman-IV-Quest-Christopher-Reeve/dp/B00FO71D6E/ref=sr_1_2?s=movies-tv&ie=UTF8&qid=1454887064&sr=1-2&keywords=Superman+IV%3A+The+Quest+for+Peace|N/A|http://ecx.images-amazon.com/images/I/51fEHLHCQjL._SX200_QL80_.jpg
+44|Superman & Friends|2003|Various|Various|Animated|0|http://www.amazon.com/Superman-Friends-Various/dp/B00I40QJLW|N/A|http://ecx.images-amazon.com/images/I/81iv-I1bz5L._SX342_.jpg
+45|Max Fleischer's Superman|1998|Various|Various|Animated|0|http://www.amazon.com/Superman-Fleischer-Cartoons-Complete-Series/dp/B001OD8E4G|https://www.youtube.com/watch?v=nlTgDbLwxBU https://www.youtube.com/watch?v=C938MMRvNnM|http://ecx.images-amazon.com/images/I/91A044pf8iL._SX342_.jpg
+46|Superman II|1980|Richard Lester|Christopher Reeve|Action|0|http://www.amazon.com/Superman-II-Two-Disc-Special-Edition/dp/B000IJ79V6|https://www.youtube.com/watch?v=I3BkmYsz6-s|http://ecx.images-amazon.com/images/I/51MpfL2cZpL._SX342_.jpg
+47|With a Friend Like Harry|2000|Sergi López|Laurent Lucas|Suspense|0|http://www.amazon.com/With-A-Friend-Like-Harry/dp/B009ZM6UAS|https://www.youtube.com/watch?v=CiSP7T0bf2o https://www.youtube.com/watch?v=6kOr0r0OOOY|http://ecx.images-amazon.com/images/I/51NciXcLg1L._SX200_QL80_.jpg
+48|The Trouble With Harry|1955|Alfred Hitchcock|Royal Dano|Suspense|0|http://www.amazon.com/The-Trouble-Harry-John-Forsythe/dp/B000055Y17|N/A|http://ecx.images-amazon.com/images/I/51NBRW973RL._SY445_.jpg
+49|Harry Potter and the Prisoner of Azkaban|2004|Alfonso Cuarón|Daniel Radcliffe|Adventure|0|http://www.amazon.com/Potter-Prisoner-Azkaban-Daniel-Radcliffe/dp/B0026YWQ4Q|https://www.youtube.com/watch?v=lAxgztbYDbs https://www.youtube.com/watch?v=R4MwzLzevpw https://www.youtube.com/watch?v=1ZdlAg3j8nI|https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTrT64iolIOTAC5heMOInqBRdWzGi9shGZg8G85wabFGQ2Se-QN
+50|When Harry Met Sally|1989|Rob Reiner|Billy Crystal|Love|0|http://www.amazon.com/When-Harry-Sally-Billy-Crystal/dp/B001Q556QG|https://www.youtube.com/watch?v=X1Qk0KxthWg|http://ecx.images-amazon.com/images/I/51BnoUUkZIL._SX200_QL80_.jpg
+51|Harry and Max|2004|Christopher Münch|Bryce Johnson|Love|0|http://www.amazon.com/Harry-Max-Bryce-Johnson/dp/B0009OL894|http://www.amazon.com/Harry-Max-Bryce-Johnson/dp/B0009OL894|http://ecx.images-amazon.com/images/I/51YY53VHV4L._SY445_.jpg
+52|Discovering the Real World of Harry Potter|2002|Various|Various|Documental|0|http://www.amazon.com/Discovering-Real-World-Harry-Potter/dp/B0000633SA|https://www.youtube.com/watch?v=PFV5VrLH5Go https://www.youtube.com/watch?v=vqhqAqsGVE0|http://ecx.images-amazon.com/images/I/811KWUNcmAL._SY445_.jpg
+53|Harry and Walter Go to New York|1976|Mark Rydell|James Caan|Comedy|0|http://www.amazon.com/Harry-Walter-Go-New-York/dp/B000067D1V|N/A|http://ecx.images-amazon.com/images/I/51XYFAS5WVL._SY445_.jpg
+54|The Harryhausen Chronicles|1998|Richard Schickel|Leonard Nimoy|SciFi|0|http://www.amazon.com/The-Harryhausen-Chronicles-Leonard-Nimoy/dp/B000068QMN|https://www.youtube.com/watch?v=mVcO8qMZzO8|http://ecx.images-amazon.com/images/I/4159WAY977L._SY445_.jpg
+55|Scary Movie 2|2001|Keenen Ivory Wayans|Anna Faris|Comedy|0|http://www.amazon.com/Scary-Movie-2-Anna-Faris/dp/B00003CY57|https://www.youtube.com/watch?v=zCFZUZxBVuI https://www.youtube.com/watch?v=XVlL3T2hpt4|http://ecx.images-amazon.com/images/I/517RRG9R1XL._SY445_.jpg
+56|Scary Movie|2000|Keenen Ivory Wayans|Anna Faris|Comedy|0|http://www.amazon.co.uk/Scary-Movie-DVD-Anna-Faris/dp/B000059H5N|https://www.youtube.com/watch?v=_dktIVAfjzY|http://ecx.images-amazon.com/images/I/51NAYP7X48L.jpg
+57|Fairly Oddparents: Scary Godparents|2002|Butch Hartman|Tara Strong|Animated|0|http://www.amazon.com/The-Fairly-Odd-Parents-Godparents/dp/B0009W5ISI|N/A|http://ecx.images-amazon.com/images/I/51TVFYAP9ZL._SY445_.jpg
+58|Goosebumps: Scary House|1997|R.L. Stine|R.L. Stine|General|0|http://www.amazon.com/Goosebumps-Scary-House-R-L-Stine/dp/B0009X7650|https://www.youtube.com/watch?v=7Cn716jv61s|http://ecx.images-amazon.com/images/I/519NGF6ACTL._SY445_.jpg
+59|Scary Movie 3|2003|David Zucker|Anna Faris|Comedy|0|http://www.amazon.com/Scary-Movie-3-Widescreen-Edition/dp/B0001AW0HU|https://www.youtube.com/watch?v=fGTrKmkceiE https://www.youtube.com/watch?v=jAiIfOX4H3U https://www.youtube.com/watch?v=zxFt3KQhkQA|http://ecx.images-amazon.com/images/I/515EXCMMS1L._SY445_.jpg
+60|Immortal Beloved|1994|Gary Oldman|Michael Culkin|Studio Special|0|http://www.amazon.com/Immortal-Beloved-Special-Edition-Michael/dp/B00000K3TN|N/A|http://ecx.images-amazon.com/images/I/91Poy0ZmnDL._SY445_.jpg
+61|Love Reinvented|2000|Anne Fontaine|Marion Cotillard|Erotic|0|http://www.amazon.com/Love-Reinvented-rÃ©inventer-Close-Cherish/dp/B000069HYV|N/A|http://ecx.images-amazon.com/images/I/415EGHPR1QL._SY445_.jpg
+62|The Love Letter|1999|Dan Curtis|Campbell Scott|Fantasy|0|http://www.amazon.com/The-Love-Letter-Campbell-Scott/dp/B00004WI57|http://ecx.images-amazon.com/images/I/51MWPPHH1AL._SY445_.jpg
+63|Love Can Seriously Damage Your Health|1996|Manuel Gómez Pereira|Ana Belén|Comedy|0|http://www.amazon.com/Love-Seriously-Damage-Your-Health/dp/B00005NB9T|https://www.youtube.com/watch?v=teCKWRlzYiM|http://ecx.images-amazon.com/images/I/51X4TW9E7AL._SY445_.jpg
+64|Love Songs|1999|Sandra Caldwell|Kim Brockington|Drama|0|http://www.amazon.com/Love-Songs-Kim-Brockington/dp/B00005KA72|N/A|http://ecx.images-amazon.com/images/I/518Y84WA0YL._SY445_.jpg
+65|Sea of Love|1989|Harold Becker|Al Pacino|Drama|0|http://www.amazon.com/Sea-Love-Collectors-Edition-Pacino/dp/B00008CMRK|https://www.youtube.com/watch?v=8DQJIoyqn7w|http://ecx.images-amazon.com/images/I/51AF4EYH1SL._SY445_.jpg
+66|He Loves Me|2002|Laetitia Colombani|Audrey Tautou|Adventure|0|http://www.amazon.com/He-Loves-Me-Not/dp/B00005JM48|N/A|http://ecx.images-amazon.com/images/I/51UZ-uQV4fL._SY445_.jpg
+67|In the Mood for Love|2001|Various|Various|Drama|0|http://www.amazon.com/Mood-Love-The-Criterion-Collection/dp/B00003CXUM|https://www.youtube.com/watch?v=yEkyYBRNWdw|http://ecx.images-amazon.com/images/I/51626KRF46L._SY445_.jpg
+68|Loves of a Blonde|1965|Milos Forman|Hana Brejchová|Classic|0|http://www.amazon.com/Loves-Blonde-The-Criterion-Collection/dp/B00005UQ7R|https://www.youtube.com/watch?v=plYGRm2xXXY|http://ecx.images-amazon.com/images/I/51DK-hwXzJL._SY445_.jpg
+69|For Love or Country|2001|Various|Various|Tv|0|http://www.amazon.com/For-Love-Country-Arturo-Sandoval/dp/B00005ALS5|https://www.youtube.com/watch?v=Dm-40OcrE8k https://www.youtube.com/watch?v=Evyrp2ERGmI|http://ecx.images-amazon.com/images/I/512YZA9PP8L._SY445_.jpg
+70|Enduring Love|2004|Roger Michell|Rhys Ifans|Drama|0|http://www.amazon.com/Enduring-Love-Widescreen-Edition-Ifans/dp/B0007R4TJ4|https://www.youtube.com/watch?v=vjS6zwUx1hA https://www.youtube.com/watch?v=EXiNVFmv0UU|http://ecx.images-amazon.com/images/I/51EEANYM3TL._SY445_.jpg
+71|A Love Divided|1999|Syd Macartney|Peter Caffrey|Studio Special|http://www.amazon.com/A-Love-Divided-Peter-Caffrey/dp/B000067IZN|https://www.youtube.com/watch?v=e9N6tOg54n0|http://ecx.images-amazon.com/images/I/51JZG2QRBKL._SY445_.jpg
+72|Ship of Fools|1965|Stanley Kramer|Oskar Werner|Classic|0|http://www.amazon.com/Ship-Fools-Oskar-Werner/dp/B0000DGKI8|N/A|http://ecx.images-amazon.com/images/I/51VK0zOyDpL._SY445_.jpg
+73|Without a Clue|1988|Thom Eberhardt|Michael Caine |Suspense|0|http://www.amazon.com/Without-Clue-Michael-Caine/dp/B00015HVN8|N/A|http://ecx.images-amazon.com/images/I/51B6M3VTJVL._SY445_.jpg
+74|Word of Mouth|1999|Tom Lazarus|Catalina Larranga|Drama|0|http://www.amazon.com/Word-Mouth-Catalina-Larranga/dp/B00005RYM3|N/A| 
+75|Sleepless|2001|Dario Argento|Max von Sydow|Terror|0|http://www.amazon.co.uk/Sleepless-DVD-Max-von-Sydow/dp/B00005UPMF|https://www.youtube.com/watch?v=blP5IM2wKjM|http://ecx.images-amazon.com/images/I/5130PRDW6BL.jpg
+76|Spider-Man 2|2004|Sam Raimi|Rosemary Harris|Action|0|http://www.amazon.com/Spider-Man-2-Widescreen-Special-Edition/dp/B00005JMQW|https://www.youtube.com/watch?v=enmFqm_N_ZE|http://ecx.images-amazon.com/images/I/51529JJX43L._SY445_.jpg	
+77|Duel to the Death|1982|Siu-Tung Ching|Norman Chu|Action|0|http://www.amazon.com/Duel-Death-Norman-Chu/dp/B0000TPA10|https://www.youtube.com/watch?v=pVm11PZxYG0|http://ecx.images-amazon.com/images/I/51291C0726L._SY445_.jpg
+78|Battlefield Earth|2000|Roger Christian|John Travolta |SciFi|0|http://www.amazon.com/Battlefield-Earth-John-Travolta/dp/B00003CXIV|https://www.youtube.com/watch?v=XhNuXvlCTTc|http://ecx.images-amazon.com/images/I/21RHNPWT45L.jpg
+79|Sex and the City: Season 5|2002|Charles McDougall|Sarah Jessica Parker|Comedy|0|http://www.amazon.com/Sex-City-Season-5/dp/B006GLN3WY|N/A|http://ecx.images-amazon.com/images/I/51HR91j8C8L._SX200_QL80_.jpg
+80|Proteus|2003|John Greyson|Rouxnet Brown|Drama|0|http://www.amazon.com/Proteus-Rouxnet-Brown/dp/B0040RASMY|https://www.youtube.com/watch?v=U-LOw6hc6h4|http://ecx.images-amazon.com/images/I/51qOeqxv2pL._SY445_.jpg
+81|SpongeBob SquarePants: Fear of a Krabby Patty|2005|Derek Drymon|Tom Kenny|Comedy|0|http://www.amazon.com/Spongebob-Squarepants-Fear-Krabby-Patty/dp/B0007Y08OC|N/A|http://ecx.images-amazon.com/images/I/61QFQQVZRNL._SY445_.jpg
+82|She Gets What She Wants|2002|Melanie Mayron|Piper Perabo|Comedy|0|http://www.amazon.com/She-Gets-What-Wants/dp/B00079HZXY|https://www.youtube.com/watch?v=b-m8bBHvV8M|http://ecx.images-amazon.com/images/I/5151Y7JXSBL._SY445_.jpg
+83|Poetic Justice|1993|John Singleton|Joe Torry|Love|0|http://www.amazon.com/Poetic-Justice-Joe-Torry/dp/0767821955|N/A|http://ecx.images-amazon.com/images/I/51J7FF8G0RL._SY445_.jpg
+84|Bollywood and Vine|2005|Donald Farmer|Skye Aubrey|Comedy|0|http://www.amazon.com/Bollywood-Vine-Skye-Aubrey/dp/B000AYQO74|http://www.amazon.com/Bollywood-Vine-Skye-Aubrey/dp/B000AYQO74|http://ecx.images-amazon.com/images/I/511DXGBVTSL._SY445_.jpg
+85|Pokemon 3: The Movie|2001|Michael Haigney|Veronica Taylor|Animated|0|http://www.amazon.com/Pokemon-3-Movie-Veronica-Taylor/dp/B00005LKI1|https://www.youtube.com/watch?v=pfWeY3TOv2Q|http://ecx.images-amazon.com/images/I/91Ew54jXjYL._SX342_.jpg
+86|Rugrats in Paris: The Movie|2000|Stig Bergqvist|Christine Cavanaugh|Kids|0|http://www.amazon.com/Rugrats-Paris-Movie-Christine-Cavanaugh/dp/B000059PQE|https://www.youtube.com/watch?v=X6u7JuLzmZE https://www.youtube.com/watch?v=zcY3-QLLudk|http://ecx.images-amazon.com/images/I/51BRV7H41QL._SY445_.jpg
+87|God Is Brazilian|2004|Carlos Diegues|Antônio Fagundes|Adventure|0|http://www.amazon.com/God-Is-Brazilian-Antônio-Fagundes/dp/B0006TPDVG|https://www.youtube.com/watch?v=WKZegra3jKE|http://ecx.images-amazon.com/images/I/51GAECKESNL._SY445_.jpg
+88|The Godfather|1972|Francis Ford Coppola|Marlon Brando & Al Pacino|Drama|0|http://www.amazon.com/The-Godfather-Marlon-Brando/dp/B001GJ19F4|https://www.youtube.com/watch?v=sY1S34973zA|http://ecx.images-amazon.com/images/I/41O9BsdpBnL._SX200_QL80_.jpg
+89|Coming to America|1988|John Landis|Eddie Murphy|Comedy|0|http://www.amazon.com/Coming-America-Eddie-Murphy/dp/B001K3BG6S|https://www.youtube.com/watch?v=vPE4OCeKt2k|http://ecx.images-amazon.com/images/I/5176HC0r2XL._SX200_QL80_.jpg
+90|A.I. Artificial Intelligence|2001|Steven Spielberg|Haley Joel Osment|SciFi|0|http://www.amazon.com/A-I-Artificial-Intelligence-Widescreen-Two-Disc/dp/B00003CXXP|https://www.youtube.com/watch?v=sqS83f-NUww https://www.youtube.com/watch?v=V85dFxHkv7c|http://ecx.images-amazon.com/images/I/81HeagRwuHL._SY445_.jpg
+91|Everybody's Famous|2000|Dominique Deruddere|Josse De Pauw|Comedy|0|http://www.amazon.com/Everybodys-Famous-Josse-De-Pauw/dp/B00005OSLR|https://www.youtube.com/watch?v=f7XVE6mm5ZE|http://ecx.images-amazon.com/images/I/519UO9Lm%2BgL._SY445_.jpg
+92|The Kid|2000|Jon Turteltaub|Bruce Willis|Kids|0|http://www.amazon.com/Disneys-The-Kid-Bruce-Willis/dp/B0000524E4|https://www.youtube.com/watch?v=D_ubwE3IJhY|http://ecx.images-amazon.com/images/I/51CNCM6A6XL._SY445_.jpg
+93|The Martian Chronicles|1980|Gayle Hunnicutt|Rock Hudson|SciFi|0|http://www.amazon.com/The-Martian-Chronicles-Rock-Hudson/dp/B0002CR03Q|https://www.youtube.com/watch?v=FUKPso0EH9Q|http://ecx.images-amazon.com/images/I/51GV5WNZTKL._SY445_.jpg
+94|Twister|1996|Jan de Bont|Helen Hunt|Action|0|http://www.amazon.com/Twister-Helen-Hunt/dp/0790729636|https://www.youtube.com/watch?v=wKSIdx11DnE|http://ecx.images-amazon.com/images/I/51GW5RZP9SL._SY445_.jpg
+95|The Adventures of Buckaroo Banzai|1984|W. D. Richter|Peter Weller |SciFi|0|http://www.amazon.com/Adventures-Buckaroo-Banzai-Across-Dimension/dp/B00005JKEX|N/A|http://ecx.images-amazon.com/images/I/51V742CZKYL._SY445_.jpg
+96|Wake of Death|2004|Philippe Martinez|Jean-Claude Van Damme|Action|0|http://www.amazon.com/Wake-Death-Jean-Claude-Van-Damme/dp/B00069L0Y0|https://www.youtube.com/watch?v=2gVSWxEvAks|http://ecx.images-amazon.com/images/I/51KK51SBH0L._SY445_.jpg
+97|X-Men|2000|Bryan Singer|Patrick Stewart|Action|0|http://www.amazon.com/X-Men-Widescreen-Edition-Patrick-Stewart/dp/B00003CX8J|https://www.youtube.com/watch?v=WTsRhKZwzng https://www.youtube.com/watch?v=C-lMkLTyoWU|http://ecx.images-amazon.com/images/I/51PCPQP24NL._SY445_.jpg
+98|The X-Files: Season 8|2000|Barry K. Thomas|David Duchovny|Suspense|0|http://www.amazon.com/The-X-Files-Complete-Eighth-Season/dp/B00008YGRY|N/A|http://ecx.images-amazon.com/images/I/51N2NNAHHBL._SY445_.jpg
+99|Dragon Ball Z: Great Saiyaman: Gohan's Secret|1999|Funimation|Various|Animated|0|http://www.amazon.com/Dragon-Ball-Saiyaman-Gohans-Secret/dp/B0009CTTK6|https://www.youtube.com/watch?v=JHtbA_DUCJg|http://ecx.images-amazon.com/images/I/517M0VBZC6L._SY445_.jpg
+100|Dragon Ball Z: Androids|2000|Minoru Okazaki|Masako Nozawa|Animated|0|http://www.amazon.com/Dragon-Ball-Z-Androids-Invasion/dp/B00004YKPO|https://www.youtube.com/watch?v=U-nJSIOvV4k|http://ecx.images-amazon.com/images/I/51YG9N6JM2L._SY445_.jpg
+
 
