@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <style>
+  .node {
+    stroke-width: 1.5px;
+  }
 
-.node {
-  stroke-width: 1.5px;
-}
-.link {
-  stroke: #000;
-  stroke-width: 1.5px;
-}
+  .link {
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
 </style>
 <html>
+
 <head>
 
   <link rel="stylesheet" href="http://neo4j-contrib.github.io/developer-resources/language-guides/assets/css/main.css">
 </head>
+
 <body>
   <div id="graph">
   </div>
@@ -80,127 +82,172 @@
       </div>
     </div>
   </div>
-<script src="http:////d3js.org/d3.v3.min.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script>
-var width = 960,
-    height = 500;
-var graph = {
-  "nodes": [
-    {"x": 469, "y": 410},
-    {"x": 493, "y": 364},
-    {"x": 442, "y": 365},
-    {"x": 467, "y": 314},
-    {"x": 477, "y": 248},
-    {"x": 425, "y": 207},
-    {"x": 402, "y": 155},
-    {"x": 369, "y": 196},
-    {"x": 350, "y": 148},
-    {"x": 539, "y": 222},
-    {"x": 594, "y": 235},
-    {"x": 582, "y": 185},
-    {"x": 633, "y": 200}
-  ],
-  "links": [
-    {"source":  0, "target":  1},
-    {"source":  1, "target":  2},
-    {"source":  2, "target":  0},
-    {"source":  1, "target":  3},
-    {"source":  3, "target":  2},
-    {"source":  3, "target":  4},
-    {"source":  4, "target":  5},
-    {"source":  5, "target":  6},
-    {"source":  5, "target":  7},
-    {"source":  6, "target":  7},
-    {"source":  6, "target":  8},
-    {"source":  7, "target":  8},
-    {"source":  9, "target":  4},
-    {"source":  9, "target": 11},
-    {"source":  9, "target": 10},
-    {"source": 10, "target": 11},
-    {"source": 11, "target": 12},
-    {"source": 12, "target": 10}
-  ]
-};
+  <script src="http:////d3js.org/d3.v3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script>
+    var width = 960,
+      height = 500;
+    var graph = {
+      "nodes": [{"nombre":"The Matrix: Revolutions","anio":"2003","genero":"Action","director":"Andy Wachowski","protagonista":"Keanu Reeves","comprar":"http://www.amazon.com/The-Matrix-Revolutions-Keanu-Reeves/dp/B0014C0BMU","imagen":"http://ecx.images-amazon.com/images/I/51Q8oii-BoL._SX200_QL80_.jpg","trailers":["https://www.youtube.com/watch?v=NhoaoTZJSX4"],"id":1,"rating":0}, {"nombre":"The Matrix: Reloaded","anio":"2003","genero":"Action","director":"Andy Wachowski","protagonista":"Keanu Reeves","comprar":"http://www.amazon.com/The-Matrix-Reloaded-Keanu-Reeves/dp/B001EC2J20","imagen":"http://ecx.images-amazon.com/images/I/51aB8lfW-QL._SX200_QL80_.jpg","trailers":["https://www.youtube.com/watch?v=kYzz0FSgpSU","https://www.youtube.com/watch?v=-URQ4sMzBvA"],"id":2,"rating":0}, {"nombre":"Sexual Matrix","anio":"1999","genero":"Erotic","director":"Udo Blass","protagonista":"Jay Stewart & Michelle Hall","comprar":"http://www.amazon.com/Sexual-Matrix-Jay-Stewart/dp/B000068MB0","imagen":"http://ecx.images-amazon.com/images/I/517EE89F5HL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=wbOW_JS1wUw"],"id":3,"rating":0}, {"nombre":"Armitage: Dual-Matrix","anio":"2002","genero":"Animation","director":"Katsuhito Akiyama","protagonista":"RyÃ´ka Yuzuki","comprar":"http://www.amazon.com/Armitage-Dual-Matrix-Special-Edition/dp/B00006674V","imagen":"http://ecx.images-amazon.com/images/I/51C0M9Y6MHL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=I6NGqM3zmuc"],"id":4,"rating":0}, {"nombre":"The Matrix: Reloaded: Bonus Material","anio":"2003","genero":"Action","director":"Andy Wachowski","protagonista":"Keanu Reeves","comprar":"http://www.amazon.com/The-Matrix-Reloaded-Widescreen-Edition/dp/B0000AXE8I","imagen":"","trailers":["https://www.youtube.com/watch?v=kYzz0FSgpSU","https://www.youtube.com/watch?v=-URQ4sMzBvA"],"id":5,"rating":0}, {"nombre":"The Animatrix","anio":"2003","genero":"Animated","director":"Andrew R. Jones","protagonista":"Isshin Chiba","comprar":"http://www.amazon.com/The-Animatrix-Isshin-Chiba/dp/B00008LDPU","imagen":"","trailers":["https://www.youtube.com/watch?v=JwKJsRU6V_s","https://www.youtube.com/watch?v=DUCMqT3nN_c"],"id":6,"rating":0}, {"nombre":"The Matrix: Revolutions: Bonus Material","anio":"2003","genero":"Action","director":"Andy Wachowski","protagonista":"Keanu Reeves","comprar":"http://www.amazon.com/Matrix-Revolutions-Two-Disc-Widescreen-Edition/dp/B0001BKAEY","imagen":"","trailers":["https://www.youtube.com/watch?v=NhoaoTZJSX4"],"id":7,"rating":0}, {"nombre":"The Matrix","anio":"1999","genero":"Keanu Reeves","director":"","protagonista":"Andy Wachowski","comprar":"0","imagen":"https://www.youtube.com/watch?v=a94b1yZOBes","trailers":["http://www.amazon.com/The-Matrix-Keanu-Reeves/dp/B00000K19E"],"id":8,"rating":0}, {"nombre":"The Matrix: Revisited","anio":"2001","genero":"Special","director":"Josh Oreck","protagonista":"Lorenzo di Bonaventura","comprar":"http://www.amazon.com/The-Matrix-Revisited-Lorenzo-Bonaventura/dp/B00005OBB9","imagen":"http://ecx.images-amazon.com/images/I/5163QGY0J9L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=TJJ0Jes577I"],"id":9,"rating":0}, {"nombre":"Armitage III: Poly-Matrix","anio":"1996","genero":"Animated","director":"Takuya SatÃ´","protagonista":"Elizabeth Berkley ","comprar":"http://www.amazon.com/Armitage-III-Poly-Matrix-Elizabeth-Berkley/dp/6304586477","imagen":"","trailers":["https://www.youtube.com/watch?v=iXKAsybyIRw","https://www.youtube.com/watch?v=nsYgaSGYuHc"],"id":10,"rating":0}, {"nombre":"Batman the Animated Series: Vol. 3","anio":"1993","genero":"Animated","director":"Bruce Timm","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/Batman-Animated-Series-Classic-Collection/dp/B0007XG43W","imagen":"","trailers":["N/A"],"id":11,"rating":0}, {"nombre":"Batman Beyond: Tech Wars / Disappearing Inque","anio":"1999","genero":"Animated","director":"N/A","protagonista":"N/A","comprar":"http://www.amazon.com/Batman-Beyond-Disappearing-Animated-Feature/dp/B00016XOBK","imagen":"","trailers":["N/A"],"id":12,"rating":0}, {"nombre":"Scooby-Doo Meets Batman","anio":"1972","genero":"Animated","director":"Casey Kasem","protagonista":"Heather North","comprar":"http://www.amazon.com/Scooby-Doo-Meets-Batman/dp/B0000687FU","imagen":"","trailers":["https://www.youtube.com/watch?v=GdKvE9xER7U"],"id":13,"rating":0}, {"nombre":"Batman: The Animated Series: Tales of the Dark Knight","anio":"1992","genero":"Animated","director":"Kevin Conroy","protagonista":"Loren Lester","comprar":"http://www.amazon.com/Batman-Animated-Series-Tales-Knight/dp/B000087F7K","imagen":"http://ecx.images-amazon.com/images/I/51WWBTNVX5L._SY445_.jpg","trailers":["N/A"],"id":14,"rating":0}, {"nombre":"Batman Beyond: Return of the Joker","anio":"2000","genero":"Animated","director":"Curt Geda","protagonista":"Will Friedle","comprar":"http://www.amazon.com/Batman-Beyond-Return-Original-Version/dp/B00005Y71K","imagen":"http://ecx.images-amazon.com/images/I/51Vje%2BvL%2BEL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=E5bh0XkEi2s"],"id":15,"rating":0}, {"nombre":"Batman Beyond: The Movie","anio":"1999","genero":"Animated","director":"Curt Geda","protagonista":"Will Friedle","comprar":"http://www.amazon.com/Batman-Beyond-Movie-Will-Friedle/dp/B0000399WG","imagen":"http://ecx.images-amazon.com/images/I/51YPP8TJ7DL._SY445_.jpg","trailers":["N/A"],"id":16,"rating":0}, {"nombre":"Batman: Mask of the Phantasm","anio":"1993","genero":"Animated","director":"Bruce W. Timm","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/Batman-Mask-Phantasm-Kevin-Conroy/dp/B0000399WH","imagen":"http://ecx.images-amazon.com/images/I/51E2Kw8U6cL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=Gcq3psi6_Ns"],"id":17,"rating":0}, {"nombre":"Batman Begins","anio":"2005","genero":"Action","director":"Christopher Nolan","protagonista":"Christian Bale","comprar":"http://www.amazon.com/Batman-Begins-Christian-Bale/dp/B001IYVUEW","imagen":"http://ecx.images-amazon.com/images/I/41ZZUOeKCLL._SX200_QL80_.jpg","trailers":["https://www.youtube.com/watch?v=neY2xVmOfUM","https://www.youtube.com/watch?v=mL8HfFDstzc"],"id":18,"rating":0}, {"nombre":"Batman: The Animated Series: Out of the Shadows","anio":"1992","genero":"Animated","director":"Jr. Efrem Zimbalist","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/Batman-The-Animated-Series-Shadows/dp/B000096IBL","imagen":"http://ecx.images-amazon.com/images/I/81J6hBnT5mL._SX342_.jpg","trailers":["N/A"],"id":19,"rating":0}, {"nombre":"Batman Begins: Bonus Material","anio":"2005","genero":"Action","director":"Christopher Nolan","protagonista":"Christian Bale","comprar":"http://www.amazon.com/Batman-Begins-Christian-Bale/dp/B001IYVUEW","imagen":"http://ecx.images-amazon.com/images/I/41ZZUOeKCLL._SX200_QL80_.jpg","trailers":["https://www.youtube.com/watch?v=neY2xVmOfUM","https://www.youtube.com/watch?v=mL8HfFDstzc"],"id":20,"rating":0}, {"nombre":"Batman: Holy Batmania","anio":"2004","genero":"Adam West","director":"Adam West","protagonista":"Bob Kane","comprar":"0","imagen":"","trailers":["http://www.amazon.com/Batman-Holy-Batmania-Adam-West/dp/B0002W4UXE"],"id":21,"rating":0}, {"nombre":"Batman & Mr. Freeze: Subzero","anio":"1998","genero":"Animated","director":"Boyd Kirkland","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/Batman-Mr-Freeze-Kevin-Conroy/dp/B00005Y71E","imagen":"http://ecx.images-amazon.com/images/I/51KQ465S0ZL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=u7yHdSyCqxE"],"id":22,"rating":0}, {"nombre":"Batman: The 1943 Serial Collection","anio":"1943","genero":"Studio Special","director":"Lambert Hillyer","protagonista":"Lewis Wilson","comprar":"http://www.amazon.com/Batman-Complete-Movie-Serial-Collection/dp/B000AQOHNA","imagen":"http://ecx.images-amazon.com/images/I/51s0%2BLNY9bL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=gd0RjMeiTYw","https://www.youtube.com/watch?v=kzEpyKuIhkQ"],"id":23,"rating":0}, {"nombre":"Batman the Animated Series: Vol. 1","anio":"1992","genero":"Animated","director":"Bruce Timm","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/Batman-Animated-Series-Classic-Collection/dp/B00023E894","imagen":"http://ecx.images-amazon.com/images/I/711wpfzaphL._SX342_.jpg","trailers":["https://www.youtube.com/watch?v=Ng6BpY2oDhw"],"id":24,"rating":0}, {"nombre":"Adventures of Batman & Robin: Poison Ivy/The Penguin","anio":"1992","genero":"Animated","director":"Various","protagonista":"Various","comprar":"http://www.amazon.com/Adventures-Batman-Robin-Poison-Penguin/dp/B002JUFPWM","imagen":"http://ecx.images-amazon.com/images/I/81p3MmE8tmL._SX342_.jpg","trailers":["N/A"],"id":25,"rating":0}, {"nombre":"Batman Returns","anio":"1992","genero":"Action","director":"Danny Devito","protagonista":"Michael Keaton","comprar":"http://www.amazon.com/Batman-Returns-MICHAEL-KEATON/dp/0790730960","imagen":"http://ecx.images-amazon.com/images/I/41SK0R2QFEL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=TlbtLfWvFbo","https://www.youtube.com/watch?v=Too3qgNaYBE"],"id":26,"rating":0}, {"nombre":"The Batman: Season 1","anio":"2004","genero":"Animated","director":"Kevin Michael Richardson","protagonista":"Rino Romano","comprar":"http://www.amazon.com/The-Batman-Complete-Season-Collection/dp/B000CEXFZ6","imagen":"http://ecx.images-amazon.com/images/I/91q%2BnGpU8yL._SX342_.jpg","trailers":["https://www.youtube.com/watch?v=hbl-Pxegs9A"],"id":27,"rating":0}, {"nombre":"Adventures of Batman & Robin: The Joker/Fire & Ice","anio":"1992","genero":"Animated","director":"Loren Lester","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/The-Adventures-Batman-Robin-Animated/dp/B00016XOB0","imagen":"http://ecx.images-amazon.com/images/I/51QES2X4F2L._SX342_.jpg","trailers":["N/A"],"id":28,"rating":0}, {"nombre":"Batman: Mystery of the Batwoman","anio":"2003","genero":"Animated","director":"Curt Geda ","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/Batman-Mystery-Batwoman-Kevin-Conroy/dp/B0000AQS7M","imagen":"http://ecx.images-amazon.com/images/I/518ZHKPGDFL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=Qe9evYaBZ9M"],"id":29,"rating":0}, {"nombre":"Batman: The Animated Series: The Legend Begins","anio":"1992","genero":"Animated","director":"Loren Lester","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/Batman-Animated-Series-Legend-Begins/dp/B00005Y71J","imagen":"http://ecx.images-amazon.com/images/I/51DKXX77BNL._SY445_.jpg","trailers":["N/A"],"id":30,"rating":0}, {"nombre":"Batman & Robin","anio":"1997","genero":"Action","director":"Joel Schumacher","protagonista":"Arnold Schwarzenegger & George Clooney","comprar":"http://www.amazon.com/Batman-Robin-Arnold-Schwarzenegger/dp/0790732912","imagen":"http://ecx.images-amazon.com/images/I/51RSKVK66DL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=aKNSstnq4sg"],"id":31,"rating":0}, {"nombre":"The Batman Superman Movie","anio":"1998","genero":"Animated","director":"Dana Delany","protagonista":"Tim Daly","comprar":"http://www.amazon.com/The-Batman-Superman-Movie-Daly/dp/B00005Y71G","imagen":"http://ecx.images-amazon.com/images/I/813l1KqgqHL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=He4K-V502Xg"],"id":32,"rating":0}, {"nombre":"Batman vs. Dracula","anio":"2005","genero":"Animated","director":"Michael Goguen","protagonista":"Rino Romano","comprar":"http://www.amazon.com/The-Batman-Dracula-Rino-Romano/dp/B000A59PLU","imagen":"http://ecx.images-amazon.com/images/I/91%2BpdWM7ZXL._SY445_.jpg","trailers":["N/A"],"id":33,"rating":0}, {"nombre":"Batman the Animated Series: Secrets of the Caped Crusader","anio":"1992","genero":"Animated","director":"Various","protagonista":"Various","comprar":"http://www.amazon.com/Batman-Animated-Series-Secrets-Crusader/dp/B0002MFGBY","imagen":"http://ecx.images-amazon.com/images/I/51BVKTDHFCL._SX342_.jpg","trailers":["N/A"],"id":34,"rating":0}, {"nombre":"Batman the Animated Series: Vol. 2","anio":"1992","genero":"Animated","director":"Bruce Timm","protagonista":"Kevin Conroy","comprar":"http://www.amazon.com/Batman-Animated-Series-Classic-Collection/dp/B0002ZMHWM","imagen":"http://ecx.images-amazon.com/images/I/710yyAd98AL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=GdKvE9xER7U"],"id":35,"rating":0}, {"nombre":"Batman Beyond: School Dayz / Spellbound","anio":"1999","genero":"Animated","director":"Various","protagonista":"Various","comprar":"http://www.amazon.com/Batman-Beyond-Spellbound-Animated-Feature/dp/B00016XOBA","imagen":"http://ecx.images-amazon.com/images/I/71khhFpDe9L._SY445_.jpg","trailers":["N/A"],"id":36,"rating":0}, {"nombre":"Batman Forever","anio":"1995","genero":"Action","director":"Joel Schumacher","protagonista":"Val Kilmer","comprar":"http://www.amazon.com/Batman-Forever-Val-Kilmer/dp/0790731002","imagen":"http://ecx.images-amazon.com/images/I/51V0HRD00TL.jpg","trailers":["https://www.youtube.com/watch?v=oGytaGTK7j8"],"id":37,"rating":0}, {"nombre":"Batman","anio":"1989","genero":"Action","director":"Tim Burton","protagonista":"Michael Keaton","comprar":"http://www.amazon.com/Batman-MICHAEL-KEATON/dp/0790729652","imagen":"http://ecx.images-amazon.com/images/I/41SYDPY4YPL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=HlsM2_8u_mk"],"id":38,"rating":0}, {"nombre":"Batman: The Movie","anio":"1966","genero":"Classics","director":"Leslie H. Martinson","protagonista":"Adam West","comprar":"http://www.amazon.co.uk/Batman-The-Movie-Adam-West/dp/B000063KMO","imagen":"http://ecx.images-amazon.com/images/I/81j0OztcjaL._SL1500_.jpg","trailers":["N/A"],"id":39,"rating":0}, {"nombre":"Batman and Robin: The Serial Collection","anio":"1949","genero":"Classics","director":"Spencer Gordon Bennet","protagonista":"Robert Lowery","comprar":"http://www.amazon.com/Batman-Robin-Complete-Serial-Collection/dp/B0007G89FU","imagen":"http://ecx.images-amazon.com/images/I/51Z7fqhIhfL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=7lCaFs0cU48"],"id":40,"rating":0}, {"nombre":"Superman: The Movie","anio":"1978","genero":"Action","director":"Richard Donner","protagonista":"Christopher Reeve","comprar":"http://www.amazon.com/Superman-The-Movie-Christopher-Reeve/dp/B000059Z8J","imagen":"http://ecx.images-amazon.com/images/I/51WJGR5R79L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=U6oa87Vd0R0"],"id":41,"rating":0}, {"nombre":"Superman the Animated Series: A Little Piece of Home","anio":"1996","genero":"Animated","director":"Toshihiko Masuda","protagonista":"Tim Daly","comprar":"http://www.amazon.com/Superman-Animated-Series-Little-Mini-DVD/dp/B0006IGWS0","imagen":"http://ecx.images-amazon.com/images/I/51XZVHPRA5L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=kM-DBPeicco"],"id":42,"rating":0}, {"nombre":"Superman IV: The Quest for Peace","anio":"1987","genero":"Action","director":"Richard Donner","protagonista":"Christopher Reeve","comprar":"http://www.amazon.com/Superman-IV-Quest-Christopher-Reeve/dp/B00FO71D6E/ref=sr_1_2?s=movies-tv&ie=UTF8&qid=1454887064&sr=1-2&keywords=Superman+IV%3A+The+Quest+for+Peace","imagen":"http://ecx.images-amazon.com/images/I/51fEHLHCQjL._SX200_QL80_.jpg","trailers":["N/A"],"id":43,"rating":0}, {"nombre":"Superman & Friends","anio":"2003","genero":"Animated","director":"Various","protagonista":"Various","comprar":"http://www.amazon.com/Superman-Friends-Various/dp/B00I40QJLW","imagen":"http://ecx.images-amazon.com/images/I/81iv-I1bz5L._SX342_.jpg","trailers":["N/A"],"id":44,"rating":0}, {"nombre":"Max Fleischer's Superman","anio":"1998","genero":"Animated","director":"Various","protagonista":"Various","comprar":"http://www.amazon.com/Superman-Fleischer-Cartoons-Complete-Series/dp/B001OD8E4G","imagen":"http://ecx.images-amazon.com/images/I/91A044pf8iL._SX342_.jpg","trailers":["https://www.youtube.com/watch?v=nlTgDbLwxBU","https://www.youtube.com/watch?v=C938MMRvNnM"],"id":45,"rating":0}, {"nombre":"Superman II","anio":"1980","genero":"Action","director":"Richard Lester","protagonista":"Christopher Reeve","comprar":"http://www.amazon.com/Superman-II-Two-Disc-Special-Edition/dp/B000IJ79V6","imagen":"http://ecx.images-amazon.com/images/I/51MpfL2cZpL._SX342_.jpg","trailers":["https://www.youtube.com/watch?v=I3BkmYsz6-s"],"id":46,"rating":0}, {"nombre":"With a Friend Like Harry","anio":"2000","genero":"Suspense","director":"Sergi LÃ³pez","protagonista":"Laurent Lucas","comprar":"http://www.amazon.com/With-A-Friend-Like-Harry/dp/B009ZM6UAS","imagen":"http://ecx.images-amazon.com/images/I/51NciXcLg1L._SX200_QL80_.jpg","trailers":["https://www.youtube.com/watch?v=CiSP7T0bf2o","https://www.youtube.com/watch?v=6kOr0r0OOOY"],"id":47,"rating":0}, {"nombre":"The Trouble With Harry","anio":"1955","genero":"Suspense","director":"Alfred Hitchcock","protagonista":"Royal Dano","comprar":"http://www.amazon.com/The-Trouble-Harry-John-Forsythe/dp/B000055Y17","imagen":"http://ecx.images-amazon.com/images/I/51NBRW973RL._SY445_.jpg","trailers":["N/A"],"id":48,"rating":0}, {"nombre":"Harry Potter and the Prisoner of Azkaban","anio":"2004","genero":"Adventure","director":"Alfonso CuarÃ³n","protagonista":"Daniel Radcliffe","comprar":"http://www.amazon.com/Potter-Prisoner-Azkaban-Daniel-Radcliffe/dp/B0026YWQ4Q","imagen":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTrT64iolIOTAC5heMOInqBRdWzGi9shGZg8G85wabFGQ2Se-QN","trailers":["https://www.youtube.com/watch?v=lAxgztbYDbs","https://www.youtube.com/watch?v=R4MwzLzevpw","https://www.youtube.com/watch?v=1ZdlAg3j8nI"],"id":49,"rating":0}, {"nombre":"When Harry Met Sally","anio":"1989","genero":"Love","director":"Rob Reiner","protagonista":"Billy Crystal","comprar":"http://www.amazon.com/When-Harry-Sally-Billy-Crystal/dp/B001Q556QG","imagen":"http://ecx.images-amazon.com/images/I/51BnoUUkZIL._SX200_QL80_.jpg","trailers":["https://www.youtube.com/watch?v=X1Qk0KxthWg"],"id":50,"rating":0}, {"nombre":"Harry and Max","anio":"2004","genero":"Love","director":"Christopher MÃ¼nch","protagonista":"Bryce Johnson","comprar":"http://www.amazon.com/Harry-Max-Bryce-Johnson/dp/B0009OL894","imagen":"http://ecx.images-amazon.com/images/I/51YY53VHV4L._SY445_.jpg","trailers":["http://www.amazon.com/Harry-Max-Bryce-Johnson/dp/B0009OL894"],"id":51,"rating":0}, {"nombre":"Discovering the Real World of Harry Potter","anio":"2002","genero":"Documental","director":"Various","protagonista":"Various","comprar":"http://www.amazon.com/Discovering-Real-World-Harry-Potter/dp/B0000633SA","imagen":"http://ecx.images-amazon.com/images/I/811KWUNcmAL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=PFV5VrLH5Go","https://www.youtube.com/watch?v=vqhqAqsGVE0"],"id":52,"rating":0}, {"nombre":"Harry and Walter Go to New York","anio":"1976","genero":"Comedy","director":"Mark Rydell","protagonista":"James Caan","comprar":"http://www.amazon.com/Harry-Walter-Go-New-York/dp/B000067D1V","imagen":"http://ecx.images-amazon.com/images/I/51XYFAS5WVL._SY445_.jpg","trailers":["N/A"],"id":53,"rating":0}, {"nombre":"The Harryhausen Chronicles","anio":"1998","genero":"SciFi","director":"Richard Schickel","protagonista":"Leonard Nimoy","comprar":"http://www.amazon.com/The-Harryhausen-Chronicles-Leonard-Nimoy/dp/B000068QMN","imagen":"http://ecx.images-amazon.com/images/I/4159WAY977L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=mVcO8qMZzO8"],"id":54,"rating":0}, {"nombre":"Scary Movie 2","anio":"2001","genero":"Comedy","director":"Keenen Ivory Wayans","protagonista":"Anna Faris","comprar":"http://www.amazon.com/Scary-Movie-2-Anna-Faris/dp/B00003CY57","imagen":"http://ecx.images-amazon.com/images/I/517RRG9R1XL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=zCFZUZxBVuI","https://www.youtube.com/watch?v=XVlL3T2hpt4"],"id":55,"rating":0}, {"nombre":"Scary Movie","anio":"2000","genero":"Comedy","director":"Keenen Ivory Wayans","protagonista":"Anna Faris","comprar":"http://www.amazon.co.uk/Scary-Movie-DVD-Anna-Faris/dp/B000059H5N","imagen":"http://ecx.images-amazon.com/images/I/51NAYP7X48L.jpg","trailers":["https://www.youtube.com/watch?v=_dktIVAfjzY"],"id":56,"rating":0}, {"nombre":"Fairly Oddparents: Scary Godparents","anio":"2002","genero":"Animated","director":"Butch Hartman","protagonista":"Tara Strong","comprar":"http://www.amazon.com/The-Fairly-Odd-Parents-Godparents/dp/B0009W5ISI","imagen":"http://ecx.images-amazon.com/images/I/51TVFYAP9ZL._SY445_.jpg","trailers":["N/A"],"id":57,"rating":0}, {"nombre":"Goosebumps: Scary House","anio":"1997","genero":"General","director":"R.L. Stine","protagonista":"R.L. Stine","comprar":"http://www.amazon.com/Goosebumps-Scary-House-R-L-Stine/dp/B0009X7650","imagen":"http://ecx.images-amazon.com/images/I/519NGF6ACTL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=7Cn716jv61s"],"id":58,"rating":0}, {"nombre":"Scary Movie 3","anio":"2003","genero":"Comedy","director":"David Zucker","protagonista":"Anna Faris","comprar":"http://www.amazon.com/Scary-Movie-3-Widescreen-Edition/dp/B0001AW0HU","imagen":"http://ecx.images-amazon.com/images/I/515EXCMMS1L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=fGTrKmkceiE","https://www.youtube.com/watch?v=jAiIfOX4H3U","https://www.youtube.com/watch?v=zxFt3KQhkQA"],"id":59,"rating":0}, {"nombre":"Immortal Beloved","anio":"1994","genero":"Studio Special","director":"Gary Oldman","protagonista":"Michael Culkin","comprar":"http://www.amazon.com/Immortal-Beloved-Special-Edition-Michael/dp/B00000K3TN","imagen":"http://ecx.images-amazon.com/images/I/91Poy0ZmnDL._SY445_.jpg","trailers":["N/A"],"id":60,"rating":0}, {"nombre":"Love Reinvented","anio":"2000","genero":"Erotic","director":"Anne Fontaine","protagonista":"Marion Cotillard","comprar":"http://www.amazon.com/Love-Reinvented-rÃƒÂ©inventer-Close-Cherish/dp/B000069HYV","imagen":"http://ecx.images-amazon.com/images/I/415EGHPR1QL._SY445_.jpg","trailers":["N/A"],"id":61,"rating":0}, {"nombre":"The Love Letter","anio":"1999","genero":"Fantasy","director":"Dan Curtis","protagonista":"Campbell Scott","comprar":"http://www.amazon.com/The-Love-Letter-Campbell-Scott/dp/B00004WI57","imagen":"http://ecx.images-amazon.com/images/I/51MWPPHH1AL._SY445_.jpg","trailers":["N/A"],"id":62,"rating":0}, {"nombre":"Love Can Seriously Damage Your Health","anio":"1996","genero":"Comedy","director":"Manuel GÃ³mez Pereira","protagonista":"Ana BelÃ©n","comprar":"http://www.amazon.com/Love-Seriously-Damage-Your-Health/dp/B00005NB9T","imagen":"http://ecx.images-amazon.com/images/I/51X4TW9E7AL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=teCKWRlzYiM"],"id":63,"rating":0}, {"nombre":"Love Songs","anio":"1999","genero":"Drama","director":"Sandra Caldwell","protagonista":"Kim Brockington","comprar":"http://www.amazon.com/Love-Songs-Kim-Brockington/dp/B00005KA72","imagen":"http://ecx.images-amazon.com/images/I/518Y84WA0YL._SY445_.jpg","trailers":["N/A"],"id":64,"rating":0}, {"nombre":"Sea of Love","anio":"1989","genero":"Drama","director":"Harold Becker","protagonista":"Al Pacino","comprar":"http://www.amazon.com/Sea-Love-Collectors-Edition-Pacino/dp/B00008CMRK","imagen":"http://ecx.images-amazon.com/images/I/51AF4EYH1SL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=8DQJIoyqn7w"],"id":65,"rating":0}, {"nombre":"He Loves Me","anio":"2002","genero":"Adventure","director":"Laetitia Colombani","protagonista":"Audrey Tautou","comprar":"http://www.amazon.com/He-Loves-Me-Not/dp/B00005JM48","imagen":"http://ecx.images-amazon.com/images/I/51UZ-uQV4fL._SY445_.jpg","trailers":["N/A"],"id":66,"rating":0}, {"nombre":"In the Mood for Love","anio":"2001","genero":"Drama","director":"Various","protagonista":"Various","comprar":"http://www.amazon.com/Mood-Love-The-Criterion-Collection/dp/B00003CXUM","imagen":"http://ecx.images-amazon.com/images/I/51626KRF46L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=yEkyYBRNWdw"],"id":67,"rating":0}, {"nombre":"Loves of a Blonde","anio":"1965","genero":"Classic","director":"Milos Forman","protagonista":"Hana BrejchovÃ¡","comprar":"http://www.amazon.com/Loves-Blonde-The-Criterion-Collection/dp/B00005UQ7R","imagen":"http://ecx.images-amazon.com/images/I/51DK-hwXzJL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=plYGRm2xXXY"],"id":68,"rating":0}, {"nombre":"For Love or Country","anio":"2001","genero":"Tv","director":"Various","protagonista":"Various","comprar":"http://www.amazon.com/For-Love-Country-Arturo-Sandoval/dp/B00005ALS5","imagen":"http://ecx.images-amazon.com/images/I/512YZA9PP8L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=Dm-40OcrE8k","https://www.youtube.com/watch?v=Evyrp2ERGmI"],"id":69,"rating":0}, {"nombre":"Enduring Love","anio":"2004","genero":"Drama","director":"Roger Michell","protagonista":"Rhys Ifans","comprar":"http://www.amazon.com/Enduring-Love-Widescreen-Edition-Ifans/dp/B0007R4TJ4","imagen":"http://ecx.images-amazon.com/images/I/51EEANYM3TL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=vjS6zwUx1hA","https://www.youtube.com/watch?v=EXiNVFmv0UU"],"id":70,"rating":0}, {"nombre":"A Love Divided","anio":"1999","genero":"Studio Special","director":"Syd Macartney","protagonista":"Peter Caffrey","comprar":"http://www.amazon.com/A-Love-Divided-Peter-Caffrey/dp/B000067IZN","imagen":"http://ecx.images-amazon.com/images/I/51JZG2QRBKL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=e9N6tOg54n0"],"id":71,"rating":0}, {"nombre":"Ship of Fools","anio":"1965","genero":"Classic","director":"Stanley Kramer","protagonista":"Oskar Werner","comprar":"http://www.amazon.com/Ship-Fools-Oskar-Werner/dp/B0000DGKI8","imagen":"http://ecx.images-amazon.com/images/I/51VK0zOyDpL._SY445_.jpg","trailers":["N/A"],"id":72,"rating":0}, {"nombre":"Without a Clue","anio":"1988","genero":"Suspense","director":"Thom Eberhardt","protagonista":"Michael Caine ","comprar":"http://www.amazon.com/Without-Clue-Michael-Caine/dp/B00015HVN8","imagen":"http://ecx.images-amazon.com/images/I/51B6M3VTJVL._SY445_.jpg","trailers":["N/A"],"id":73,"rating":0}, {"nombre":"Word of Mouth","anio":"1999","genero":"Drama","director":"Tom Lazarus","protagonista":"Catalina Larranga","comprar":"http://www.amazon.com/Word-Mouth-Catalina-Larranga/dp/B00005RYM3","imagen":"","trailers":["N/A"],"id":74,"rating":0}, {"nombre":"Sleepless","anio":"2001","genero":"Terror","director":"Dario Argento","protagonista":"Max von Sydow","comprar":"http://www.amazon.co.uk/Sleepless-DVD-Max-von-Sydow/dp/B00005UPMF","imagen":"http://ecx.images-amazon.com/images/I/5130PRDW6BL.jpg","trailers":["https://www.youtube.com/watch?v=blP5IM2wKjM"],"id":75,"rating":0}, {"nombre":"Spider-Man 2","anio":"2004","genero":"Action","director":"Sam Raimi","protagonista":"Rosemary Harris","comprar":"http://www.amazon.com/Spider-Man-2-Widescreen-Special-Edition/dp/B00005JMQW","imagen":"http://ecx.images-amazon.com/images/I/51529JJX43L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=enmFqm_N_ZE"],"id":76,"rating":0}, {"nombre":"Duel to the Death","anio":"1982","genero":"Action","director":"Siu-Tung Ching","protagonista":"Norman Chu","comprar":"http://www.amazon.com/Duel-Death-Norman-Chu/dp/B0000TPA10","imagen":"http://ecx.images-amazon.com/images/I/51291C0726L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=pVm11PZxYG0"],"id":77,"rating":0}, {"nombre":"Battlefield Earth","anio":"2000","genero":"SciFi","director":"Roger Christian","protagonista":"John Travolta ","comprar":"http://www.amazon.com/Battlefield-Earth-John-Travolta/dp/B00003CXIV","imagen":"http://ecx.images-amazon.com/images/I/21RHNPWT45L.jpg","trailers":["https://www.youtube.com/watch?v=XhNuXvlCTTc"],"id":78,"rating":0}, {"nombre":"Sex and the City: Season 5","anio":"2002","genero":"Comedy","director":"Charles McDougall","protagonista":"Sarah Jessica Parker","comprar":"http://www.amazon.com/Sex-City-Season-5/dp/B006GLN3WY","imagen":"http://ecx.images-amazon.com/images/I/51HR91j8C8L._SX200_QL80_.jpg","trailers":["N/A"],"id":79,"rating":0}, {"nombre":"Proteus","anio":"2003","genero":"Drama","director":"John Greyson","protagonista":"Rouxnet Brown","comprar":"http://www.amazon.com/Proteus-Rouxnet-Brown/dp/B0040RASMY","imagen":"http://ecx.images-amazon.com/images/I/51qOeqxv2pL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=U-LOw6hc6h4"],"id":80,"rating":0}, {"nombre":"SpongeBob SquarePants: Fear of a Krabby Patty","anio":"2005","genero":"Comedy","director":"Derek Drymon","protagonista":"Tom Kenny","comprar":"http://www.amazon.com/Spongebob-Squarepants-Fear-Krabby-Patty/dp/B0007Y08OC","imagen":"http://ecx.images-amazon.com/images/I/61QFQQVZRNL._SY445_.jpg","trailers":["N/A"],"id":81,"rating":0}, {"nombre":"She Gets What She Wants","anio":"2002","genero":"Comedy","director":"Melanie Mayron","protagonista":"Piper Perabo","comprar":"http://www.amazon.com/She-Gets-What-Wants/dp/B00079HZXY","imagen":"http://ecx.images-amazon.com/images/I/5151Y7JXSBL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=b-m8bBHvV8M"],"id":82,"rating":0}, {"nombre":"Poetic Justice","anio":"1993","genero":"Love","director":"John Singleton","protagonista":"Joe Torry","comprar":"http://www.amazon.com/Poetic-Justice-Joe-Torry/dp/0767821955","imagen":"http://ecx.images-amazon.com/images/I/51J7FF8G0RL._SY445_.jpg","trailers":["N/A"],"id":83,"rating":0}, {"nombre":"Bollywood and Vine","anio":"2005","genero":"Comedy","director":"Donald Farmer","protagonista":"Skye Aubrey","comprar":"http://www.amazon.com/Bollywood-Vine-Skye-Aubrey/dp/B000AYQO74","imagen":"http://ecx.images-amazon.com/images/I/511DXGBVTSL._SY445_.jpg","trailers":["http://www.amazon.com/Bollywood-Vine-Skye-Aubrey/dp/B000AYQO74"],"id":84,"rating":0}, {"nombre":"Pokemon 3: The Movie","anio":"2001","genero":"Animated","director":"Michael Haigney","protagonista":"Veronica Taylor","comprar":"http://www.amazon.com/Pokemon-3-Movie-Veronica-Taylor/dp/B00005LKI1","imagen":"http://ecx.images-amazon.com/images/I/91Ew54jXjYL._SX342_.jpg","trailers":["https://www.youtube.com/watch?v=pfWeY3TOv2Q"],"id":85,"rating":0}, {"nombre":"Rugrats in Paris: The Movie","anio":"2000","genero":"Kids","director":"Stig Bergqvist","protagonista":"Christine Cavanaugh","comprar":"http://www.amazon.com/Rugrats-Paris-Movie-Christine-Cavanaugh/dp/B000059PQE","imagen":"http://ecx.images-amazon.com/images/I/51BRV7H41QL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=X6u7JuLzmZE","https://www.youtube.com/watch?v=zcY3-QLLudk"],"id":86,"rating":0}, {"nombre":"God Is Brazilian","anio":"2004","genero":"Adventure","director":"Carlos Diegues","protagonista":"AntÃ´nio Fagundes","comprar":"http://www.amazon.com/God-Is-Brazilian-AntÃ´nio-Fagundes/dp/B0006TPDVG","imagen":"http://ecx.images-amazon.com/images/I/51GAECKESNL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=WKZegra3jKE"],"id":87,"rating":0}, {"nombre":"The Godfather","anio":"1972","genero":"Drama","director":"Francis Ford Coppola","protagonista":"Marlon Brando & Al Pacino","comprar":"http://www.amazon.com/The-Godfather-Marlon-Brando/dp/B001GJ19F4","imagen":"http://ecx.images-amazon.com/images/I/41O9BsdpBnL._SX200_QL80_.jpg","trailers":["https://www.youtube.com/watch?v=sY1S34973zA"],"id":88,"rating":0}, {"nombre":"Coming to America","anio":"1988","genero":"Comedy","director":"John Landis","protagonista":"Eddie Murphy","comprar":"http://www.amazon.com/Coming-America-Eddie-Murphy/dp/B001K3BG6S","imagen":"http://ecx.images-amazon.com/images/I/5176HC0r2XL._SX200_QL80_.jpg","trailers":["https://www.youtube.com/watch?v=vPE4OCeKt2k"],"id":89,"rating":0}, {"nombre":"A.I. Artificial Intelligence","anio":"2001","genero":"SciFi","director":"Steven Spielberg","protagonista":"Haley Joel Osment","comprar":"http://www.amazon.com/A-I-Artificial-Intelligence-Widescreen-Two-Disc/dp/B00003CXXP","imagen":"http://ecx.images-amazon.com/images/I/81HeagRwuHL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=sqS83f-NUww","https://www.youtube.com/watch?v=V85dFxHkv7c"],"id":90,"rating":0}, {"nombre":"Everybody's Famous","anio":"2000","genero":"Comedy","director":"Dominique Deruddere","protagonista":"Josse De Pauw","comprar":"http://www.amazon.com/Everybodys-Famous-Josse-De-Pauw/dp/B00005OSLR","imagen":"http://ecx.images-amazon.com/images/I/519UO9Lm%2BgL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=f7XVE6mm5ZE"],"id":91,"rating":0}, {"nombre":"The Kid","anio":"2000","genero":"Kids","director":"Jon Turteltaub","protagonista":"Bruce Willis","comprar":"http://www.amazon.com/Disneys-The-Kid-Bruce-Willis/dp/B0000524E4","imagen":"http://ecx.images-amazon.com/images/I/51CNCM6A6XL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=D_ubwE3IJhY"],"id":92,"rating":0}, {"nombre":"The Martian Chronicles","anio":"1980","genero":"SciFi","director":"Gayle Hunnicutt","protagonista":"Rock Hudson","comprar":"http://www.amazon.com/The-Martian-Chronicles-Rock-Hudson/dp/B0002CR03Q","imagen":"http://ecx.images-amazon.com/images/I/51GV5WNZTKL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=FUKPso0EH9Q"],"id":93,"rating":0}, {"nombre":"Twister","anio":"1996","genero":"Action","director":"Jan de Bont","protagonista":"Helen Hunt","comprar":"http://www.amazon.com/Twister-Helen-Hunt/dp/0790729636","imagen":"http://ecx.images-amazon.com/images/I/51GW5RZP9SL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=wKSIdx11DnE"],"id":94,"rating":0}, {"nombre":"The Adventures of Buckaroo Banzai","anio":"1984","genero":"SciFi","director":"W. D. Richter","protagonista":"Peter Weller ","comprar":"http://www.amazon.com/Adventures-Buckaroo-Banzai-Across-Dimension/dp/B00005JKEX","imagen":"http://ecx.images-amazon.com/images/I/51V742CZKYL._SY445_.jpg","trailers":["N/A"],"id":95,"rating":0}, {"nombre":"Wake of Death","anio":"2004","genero":"Action","director":"Philippe Martinez","protagonista":"Jean-Claude Van Damme","comprar":"http://www.amazon.com/Wake-Death-Jean-Claude-Van-Damme/dp/B00069L0Y0","imagen":"http://ecx.images-amazon.com/images/I/51KK51SBH0L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=2gVSWxEvAks"],"id":96,"rating":0}, {"nombre":"X-Men","anio":"2000","genero":"Action","director":"Bryan Singer","protagonista":"Patrick Stewart","comprar":"http://www.amazon.com/X-Men-Widescreen-Edition-Patrick-Stewart/dp/B00003CX8J","imagen":"http://ecx.images-amazon.com/images/I/51PCPQP24NL._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=WTsRhKZwzng","https://www.youtube.com/watch?v=C-lMkLTyoWU"],"id":97,"rating":0}, {"nombre":"The X-Files: Season 8","anio":"2000","genero":"Suspense","director":"Barry K. Thomas","protagonista":"David Duchovny","comprar":"http://www.amazon.com/The-X-Files-Complete-Eighth-Season/dp/B00008YGRY","imagen":"http://ecx.images-amazon.com/images/I/51N2NNAHHBL._SY445_.jpg","trailers":["N/A"],"id":98,"rating":0}, {"nombre":"Dragon Ball Z: Great Saiyaman: Gohan's Secret","anio":"1999","genero":"Animated","director":"Funimation","protagonista":"Various","comprar":"http://www.amazon.com/Dragon-Ball-Saiyaman-Gohans-Secret/dp/B0009CTTK6","imagen":"http://ecx.images-amazon.com/images/I/517M0VBZC6L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=JHtbA_DUCJg"],"id":99,"rating":0}, {"nombre":"Dragon Ball Z: Androids","anio":"2000","genero":"Animated","director":"Minoru Okazaki","protagonista":"Masako Nozawa","comprar":"http://www.amazon.com/Dragon-Ball-Z-Androids-Invasion/dp/B00004YKPO","imagen":"http://ecx.images-amazon.com/images/I/51YG9N6JM2L._SY445_.jpg","trailers":["https://www.youtube.com/watch?v=U-nJSIOvV4k"],"id":100,"rating":0}],
+      "links": [{
+        "source": 0,
+        "target": 1
+      }, {
+        "source": 1,
+        "target": 2
+      }, {
+        "source": 2,
+        "target": 0
+      }, {
+        "source": 1,
+        "target": 3
+      }, {
+        "source": 3,
+        "target": 2
+      }, {
+        "source": 3,
+        "target": 4
+      }, {
+        "source": 4,
+        "target": 5
+      }, {
+        "source": 5,
+        "target": 6
+      }, {
+        "source": 5,
+        "target": 7
+      }, {
+        "source": 6,
+        "target": 7
+      }, {
+        "source": 6,
+        "target": 8
+      }, {
+        "source": 7,
+        "target": 8
+      }, {
+        "source": 9,
+        "target": 4
+      }, {
+        "source": 9,
+        "target": 11
+      }, {
+        "source": 9,
+        "target": 10
+      }, {
+        "source": 10,
+        "target": 11
+      }, {
+        "source": 11,
+        "target": 12
+      }, {
+        "source": 12,
+        "target": 10
+      }]
+    };
 
-// graph.nodes.forEach(function(row) {
-//   var movie = row.movie;
-//   $("<tr><td class='movie'>" + movie.title + "</td><td>" + movie.released + "</td><td>" + movie.tagline + "</td></tr>").appendTo(t)
-//     .click(function() {
-//       showMovie($(this).find("td.movie").text());
-//     })
-// });
+    // graph.nodes.forEach(function(row) {
+    //   var movie = row.movie;
+    //   $("<tr><td class='movie'>" + movie.title + "</td><td>" + movie.released + "</td><td>" + movie.tagline + "</td></tr>").appendTo(t)
+    //     .click(function() {
+    //       showMovie($(this).find("td.movie").text());
+    //     })
+    // });
 
-var force = d3.layout.force()
-    .size([width, height])
-    .charge(-400)
-    .linkDistance(40)
-    .on("tick", tick);
+    var force = d3.layout.force()
+      .size([width, height])
+      .charge(-400)
+      .linkDistance(200)
+      .gravity(0.2)
+      .on("tick", tick);
 
-var drag = force.drag()
-    .on("dragstart", dragstart);
+
+    var drag = force.drag()
+      .on("dragstart", dragstart);
 
     var svg = d3.select("#graph").append("svg")
       .attr("width", "100%").attr("height", "100%")
       .attr("pointer-events", "all");
 
-var link = svg.selectAll(".link"),
-    node = svg.selectAll(".node");
+    var link = svg.selectAll(".link"),
+      node = svg.selectAll(".node");
 
 
 
-  force
+    force
       .nodes(graph.nodes)
       .links(graph.links)
       .start();
 
-  link = link.data(graph.links)
-    .enter().append("line")
+    link = link.data(graph.links)
+      .enter().append("line")
       .attr("class", "link");
 
-  node = node.data(graph.nodes)
-    .enter().append("g")
+    node = node.data(graph.nodes)
+      .enter().append("g")
       .attr("class", "node")
       .attr("r", 12)
       .on("dblclick", dblclick)
       .on("click", click)
       .call(drag);
+      node.append("svg:rect")
+      .attr("width", "158px")
+      .attr("x", "-25px")
+      .attr("y", "-30px")
+      .attr("height", "63px")
+            .style("fill", "#06f");
+    node.append("svg:image")
+      .attr("class", "circle")
+      .attr("xlink:href", function(d) {
+        return d.imagen
+      })
+      .attr("x", "-28px")
+      .attr("y", "-28px")
+      .attr("width", "56px")
+      .attr("height", "56px");
 
-      node.append("image")
-            .attr("xlink:href", "https://github.com/favicon.ico")
-            .attr("x", -8)
-            .attr("y", -8)
-            .attr("width", 16)
-            .attr("height", 16);
+    node.append("text")
+      .attr("dx", 12)
+      .attr("dy", ".35em")
+      .text(function(d) {
+        return d.nombre
+      });
 
-        node.append("text")
-            .attr("dx", 12)
-            .attr("dy", ".35em")
-            .text(function(d) { return d.x });
-function tick() {
-  link.attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
+    function tick() {
+      link.attr("x1", function(d) {
+          return d.source.x;
+        })
+        .attr("y1", function(d) {
+          return d.source.y;
+        })
+        .attr("x2", function(d) {
+          return d.target.x;
+        })
+        .attr("y2", function(d) {
+          return d.target.y;
+        });
 
-  node.attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; });
-}
 
-function dblclick(d) {
-  d3.select(this).classed("fixed", d.fixed = false);
+      node.attr("transform", function(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+      });
 
-}
+    }
 
-function dragstart(d) {
-  d3.select(this).classed("fixed", d.fixed = true);
-}
+    function dblclick(d) {
+      d3.select(this).classed("fixed", d.fixed = false);
 
-function click(d){
+    }
 
-  console.log(d);
-}
+    function dragstart(d) {
+      d3.select(this).classed("fixed", d.fixed = true);
+    }
 
-</script>
+    function click(d) {
+
+      console.log(d);
+    }
+  </script>
 </body>
+
 </html>
