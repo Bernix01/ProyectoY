@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.stream.Collectors;
 
 import org.jgrapht.DirectedGraph;
 import org.jgrapht.UndirectedGraph;
@@ -15,12 +16,13 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
 import com.eedd2.proyectoy.graph.ProyectoYEdge;
+import com.eedd2.proyectoy.graph.ProyectoYGraph;
 import com.eedd2.proyectoy.model.Pelicula;
 
 public class ProyectoY {
 
-	public static UndirectedGraph<Pelicula,ProyectoYEdge> cargar(){
-		UndirectedGraph<Pelicula,ProyectoYEdge> orbe = new SimpleGraph<>(ProyectoYEdge.class);
+	public static ProyectoYGraph<Pelicula,ProyectoYEdge> cargar(){
+		ProyectoYGraph<Pelicula,ProyectoYEdge> orbe = new ProyectoYGraph<Pelicula,ProyectoYEdge>(ProyectoYEdge.class);
 
 		File file = new File("peliculas.y");
 		try {
@@ -39,7 +41,7 @@ public class ProyectoY {
 				temporal.setGenero(datos[5]);
 				temporal.setComprar(datos[7]);
 				String[] trailerarray = datos[8].split(" ");
-				temporal.setTrailers(Arrays.asList(trailerarray));
+				temporal.setTrailers(Arrays.asList(trailerarray).stream().filter(trailer -> !trailer.equals("N/A")).collect(Collectors.toList()));
 				temporal.setImagen(datos[9].equals("N/A")? "": datos[9]);
 				orbe.addVertex(temporal);
 			}
@@ -53,13 +55,28 @@ public class ProyectoY {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		orbe.vertexSet().stream().forEach(pelicula ->{
+			orbe.vertexSet().stream().filter(tmp -> !tmp.equals(pelicula)).forEach(pelicula2 ->{
 
+				ProyectoYEdge edge;
+				if(pelicula.getGenero().equals(pelicula2.getGenero())){
+					 edge = new ProyectoYEdge(RelType.PROTAGONISTA);
+					 if(!orbe.containsEdge(edge))
+					orbe.addEdge(pelicula, pelicula2, edge);
+				}
+				if(pelicula.getDirector().equals(pelicula2.getDirector())){
+					edge = new ProyectoYEdge(RelType.DIRECTOR);
+					 if(!orbe.containsEdge(edge))
+					orbe.addEdge(pelicula, pelicula2, edge);
+				}
+			});
+		});
 
 		return orbe;
 	}
 
 
 	public static enum RelType{
-		ACTOR,GENERO,ANIO;
+		DIRECTOR,PROTAGONISTA;
 	}
 }
