@@ -21,8 +21,8 @@ import com.eedd2.proyectoy.model.Pelicula;
 
 public class ProyectoY {
 
-	public static ProyectoYGraph<Pelicula,ProyectoYEdge> cargar(){
-		ProyectoYGraph<Pelicula,ProyectoYEdge> orbe = new ProyectoYGraph<Pelicula,ProyectoYEdge>(ProyectoYEdge.class);
+	public static ProyectoYGraph<Pelicula, ProyectoYEdge> cargar() {
+		ProyectoYGraph<Pelicula, ProyectoYEdge> orbe = new ProyectoYGraph<Pelicula, ProyectoYEdge>(ProyectoYEdge.class);
 
 		File file = new File("peliculas.y");
 		try {
@@ -30,7 +30,7 @@ public class ProyectoY {
 			String linea;
 			String[] datos;
 			Pelicula temporal;
-			while((linea = br.readLine()) != null){
+			while ((linea = br.readLine()) != null) {
 				datos = linea.split("\\|");
 				temporal = new Pelicula();
 				temporal.setId(Integer.parseInt(datos[0]));
@@ -41,12 +41,27 @@ public class ProyectoY {
 				temporal.setGenero(datos[5]);
 				temporal.setComprar(datos[7]);
 				String[] trailerarray = datos[8].split(" ");
-				temporal.setTrailers(Arrays.asList(trailerarray).stream().filter(trailer -> !trailer.equals("N/A")).collect(Collectors.toList()));
-				temporal.setImagen(datos[9].equals("N/A")? "": datos[9]);
+				temporal.setTrailers(Arrays.asList(trailerarray).stream().filter(trailer -> !trailer.equals("N/A"))
+						.collect(Collectors.toList()));
+				temporal.setImagen(datos[9].equals("N/A") ? "" : datos[9]);
 				orbe.addVertex(temporal);
 			}
-			orbe.vertexSet().forEach(pelicula ->{
-				//orbe.vertexSet().
+			orbe.vertexSet().stream().forEach(pelicula -> {
+				orbe.vertexSet().stream().filter(tmp -> !tmp.equals(pelicula)).forEach(pelicula2 -> {
+if(!pelicula.equals(pelicula2)){
+					ProyectoYEdge edge;
+					if (pelicula.getProtagonista().equals(pelicula2.getProtagonista())) {
+						edge = new ProyectoYEdge(RelType.PROTAGONISTA);
+						if (!orbe.containsEdge(edge))
+							orbe.addEdge(pelicula, pelicula2, edge);
+					}
+					if (pelicula.getDirector().equals(pelicula2.getDirector())) {
+						edge = new ProyectoYEdge(RelType.DIRECTOR);
+						if (!orbe.containsEdge(edge))
+							orbe.addEdge(pelicula, pelicula2, edge);
+					}
+}
+				});
 			});
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -55,28 +70,12 @@ public class ProyectoY {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		orbe.vertexSet().stream().forEach(pelicula ->{
-			orbe.vertexSet().stream().filter(tmp -> !tmp.equals(pelicula)).forEach(pelicula2 ->{
 
-				ProyectoYEdge edge;
-				if(pelicula.getGenero().equals(pelicula2.getGenero())){
-					 edge = new ProyectoYEdge(RelType.PROTAGONISTA);
-					 if(!orbe.containsEdge(edge))
-					orbe.addEdge(pelicula, pelicula2, edge);
-				}
-				if(pelicula.getDirector().equals(pelicula2.getDirector())){
-					edge = new ProyectoYEdge(RelType.DIRECTOR);
-					 if(!orbe.containsEdge(edge))
-					orbe.addEdge(pelicula, pelicula2, edge);
-				}
-			});
-		});
 
 		return orbe;
 	}
 
-
-	public static enum RelType{
-		DIRECTOR,PROTAGONISTA;
+	public static enum RelType {
+		DIRECTOR, PROTAGONISTA;
 	}
 }

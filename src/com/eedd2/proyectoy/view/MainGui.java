@@ -4,7 +4,11 @@
 package com.eedd2.proyectoy.view;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
+
+import javax.swing.JOptionPane;
 
 import org.jgrapht.DirectedGraph;
 import org.jgrapht.UndirectedGraph;
@@ -26,7 +30,10 @@ public class MainGui {
 	public static void main(String... args){
 		ProyectoYGraph<Pelicula, ProyectoYEdge> orbe = ProyectoY.cargar();
 		Set<Pelicula> res = new HashSet<>();
-		Pelicula prototipo = (Pelicula) orbe.vertexSet().toArray()[9];
+		String palabra = JOptionPane.showInputDialog("Proyecto y - Peliculas");
+		List<Pelicula> coincidencias = orbe.vertexSet().stream().filter(pelicula ->  pelicula.getNombre().contains(palabra)).collect(Collectors.toList());
+		int opt = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la pelicula...\n"+coincidencias));
+		Pelicula prototipo = coincidencias.get(opt);
 		BreadthFirstIterator<Pelicula, ProyectoYEdge> iter = new BreadthFirstIterator<>(orbe,prototipo);
 		iter.forEachRemaining(pelicula ->{
 			res.add(pelicula);
