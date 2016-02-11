@@ -27,7 +27,7 @@ import com.eedd2.proyectoy.model.Pelicula;
  * @author gbern
  *
  */
-public class MainGui {
+public class MainGUI_2 {
 
 	public static void main(String... args) {
 		//Cargar el grafo desde los archivos

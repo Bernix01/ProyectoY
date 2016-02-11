@@ -1,8 +1,8 @@
 package com.eedd2.proyectoy.model;
 
 import java.util.List;
-import java.util.stream.Collectors;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -12,6 +12,14 @@ public class Pelicula implements Comparable<Pelicula> {
 	private List<String> trailers;
 	private int id;
 	private int rating;
+	private COLOR color;
+
+	/**
+	 * @param color the color to set
+	 */
+	public void setColor(COLOR color) {
+		this.color = color;
+	}
 
 	public Pelicula(){
 		this.rating = 0;
@@ -111,6 +119,99 @@ public class Pelicula implements Comparable<Pelicula> {
 			e.printStackTrace();
 		}
 		return "";
+	}
+
+	/**
+	 * @return the color
+	 */
+	public COLOR getColor() {
+		return color;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Pelicula)) {
+			return false;
+		}
+		Pelicula other = (Pelicula) obj;
+		if (id != other.id) {
+			return false;
+		}
+		return true;
+	}
+
+	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+	public static enum COLOR{
+		BUSCADO ("rgb(179, 65, 49)"), COINCIDENCIA("rgb(236, 173, 50)");
+
+		private final String text;
+
+	    /**
+	     * @param text
+	     */
+	    private COLOR(final String text) {
+	        this.text = text;
+	    }
+	    @JsonValue
+	    public String getValue(){
+	    	return text;
+	    }
+
+	    /* (non-Javadoc)
+	     * @see java.lang.Enum#toString()
+	     */
+	    @Override
+	    public String toString() {
+	        return text;
+	    }
+	}
+
+	public String paraGuardar(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(id);
+		sb.append('|');
+		sb.append(nombre);
+		sb.append('|');
+		sb.append(anio);
+		sb.append('|');
+		sb.append(director);
+		sb.append('|');
+		sb.append(protagonista);
+		sb.append('|');
+		sb.append(genero);
+		sb.append('|');
+		sb.append(rating);
+		sb.append('|');
+		sb.append(comprar);
+		sb.append('|');
+		trailers.forEach(trailer ->{
+			sb.append(trailers);
+			sb.append(" ");
+		});
+		sb.substring(sb.length() -1);
+		sb.append('|');
+		sb.append(imagen);
+		return sb.toString();
 	}
 
 }
