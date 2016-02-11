@@ -30,12 +30,12 @@ import com.eedd2.proyectoy.model.Pelicula;
 public class ProyectoY {
 
 	private static String fileName = "html/index.html";
-	private static String saveFileName;
+	private static String saveFileName = "peliculas.y";
 
 	public static ProyectoYGraph<Pelicula, ProyectoYEdge> cargar() {
 		ProyectoYGraph<Pelicula, ProyectoYEdge> orbe = new ProyectoYGraph<Pelicula, ProyectoYEdge>(ProyectoYEdge.class);
 
-		File file = new File("peliculas.y");
+		File file = new File(saveFileName);
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			String linea;
