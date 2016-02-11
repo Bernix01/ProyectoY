@@ -212,16 +212,20 @@ public class Pelicula implements Comparable<Pelicula> {
 		sb.append('|');
 		sb.append(rating);
 		sb.append('|');
-		sb.append(comprar);
+		sb.append(comprar.isEmpty() ? "N/A" : comprar);
 		sb.append('|');
 		trailers.forEach(trailer -> {
-			sb.append(trailers);
+			sb.append(trailer);
 			sb.append(" ");
 		});
 		sb.substring(sb.length() - 1);
 		sb.append('|');
-		sb.append(imagen);
+		sb.append(imagen.isEmpty() ? "N/A": imagen);
 		return sb.toString();
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
 	}
 
 }

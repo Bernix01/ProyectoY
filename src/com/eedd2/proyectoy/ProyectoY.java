@@ -50,6 +50,7 @@ public class ProyectoY {
 				temporal.setDirector(datos[3]);
 				temporal.setProtagonista(datos[4]);
 				temporal.setGenero(datos[5]);
+				temporal.setRating(Integer.parseInt(datos[6]));
 				temporal.setComprar(datos[7]);
 				String[] trailerarray = datos[8].split(" ");
 				temporal.setTrailers(Arrays.asList(trailerarray).stream().filter(trailer -> !trailer.equals("N/A"))

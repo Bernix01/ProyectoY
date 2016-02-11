@@ -1,3 +1,17 @@
+package com.eedd2.proyectoy.view;
+
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import javax.swing.JOptionPane;
+
+import org.jgrapht.graph.UndirectedSubgraph;
+import org.jgrapht.traverse.BreadthFirstIterator;
 
 import com.eedd2.proyectoy.ProyectoY;
 import com.eedd2.proyectoy.graph.ProyectoYEdge;
@@ -15,7 +29,7 @@ public class MainGui {
 		ProyectoYGraph<Pelicula, ProyectoYEdge> orbe = ProyectoY.cargar();
 
 		UndirectedSubgraph<Pelicula, ProyectoYEdge> sub;
-		Set<Pelicula> res = new HashSet<>();
+		Set<Pelicula> res = new HashSet<Pelicula>();
 
 		// Pedir la pelicula a buscar
 		String palabra = JOptionPane.showInputDialog("Proyecto Y - Ingrese palabra para buscar coincidencias:");
@@ -31,20 +45,20 @@ public class MainGui {
 			opciones+=i+"."+a.getNombre()+"\n";
 			i++;
 		}
-		
+
 		// pidiendo la opcion que se quiere buscar
 		int opt = Integer.parseInt(JOptionPane.showInputDialog(null,opciones));
-		
-		
+
+
 		// almacenando la pelicula buscada
 		Pelicula prototipo = coincidencias.get(opt);
-		
+
 		//Aumentando las vistas de la pelicula seleccionada
 		coincidencias.get(opt).voteUp();
-		
+
 		//sobreescribe la base de datos
 		ProyectoY.guardar(orbe);
-		
+
 		// por cada coincidencia, se ejecuta una busqueda en anchura y se
 		// almacena en un set
 		coincidencias.forEach(peli -> {
