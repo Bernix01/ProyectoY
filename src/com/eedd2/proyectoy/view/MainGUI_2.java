@@ -68,6 +68,7 @@ public class MainGUI_2 {
 		//intentamos mostrar
 		try {
 			ProyectoY.mostrar(sub);
+			orbe.clearColors(); //limpiar de los colores al orbe.
 		} catch (IOException | URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

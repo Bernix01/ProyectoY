@@ -8,6 +8,8 @@ import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.AbstractBaseGraph;
 import org.jgrapht.graph.ClassBasedEdgeFactory;
 
+import com.eedd2.proyectoy.model.Pelicula;
+
 /**
  * @author gbern
  * @param <E>
@@ -25,6 +27,10 @@ public class ProyectoYGraph<V,E> extends AbstractBaseGraph<V, E> implements Undi
 		super(new ClassBasedEdgeFactory<V,E>(edgeClass), true, true);
 	}
 
-
+public void clearColors(){
+	this.vertexSet().stream().filter(pelicula -> ((Pelicula) pelicula).getColor() != null).forEach(pelicula ->{
+		((Pelicula) pelicula).setColor(null);
+	});
+}
 
 }

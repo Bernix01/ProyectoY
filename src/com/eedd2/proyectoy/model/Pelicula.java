@@ -1,6 +1,8 @@
 package com.eedd2.proyectoy.model;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -15,13 +17,14 @@ public class Pelicula implements Comparable<Pelicula> {
 	private COLOR color;
 
 	/**
-	 * @param color the color to set
+	 * @param color
+	 *            the color to set
 	 */
 	public void setColor(COLOR color) {
 		this.color = color;
 	}
 
-	public Pelicula(){
+	public Pelicula() {
 		this.rating = 0;
 	}
 
@@ -128,7 +131,9 @@ public class Pelicula implements Comparable<Pelicula> {
 		return color;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -139,7 +144,9 @@ public class Pelicula implements Comparable<Pelicula> {
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 *
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -161,32 +168,35 @@ public class Pelicula implements Comparable<Pelicula> {
 	}
 
 	@JsonFormat(shape = JsonFormat.Shape.OBJECT)
-	public static enum COLOR{
-		BUSCADO ("rgb(179, 65, 49)"), COINCIDENCIA("rgb(236, 173, 50)");
+	public static enum COLOR {
+		BUSCADO("rgb(179, 65, 49)"), COINCIDENCIA("rgb(236, 173, 50)");
 
 		private final String text;
 
-	    /**
-	     * @param text
-	     */
-	    private COLOR(final String text) {
-	        this.text = text;
-	    }
-	    @JsonValue
-	    public String getValue(){
-	    	return text;
-	    }
+		/**
+		 * @param text
+		 */
+		private COLOR(final String text) {
+			this.text = text;
+		}
 
-	    /* (non-Javadoc)
-	     * @see java.lang.Enum#toString()
-	     */
-	    @Override
-	    public String toString() {
-	        return text;
-	    }
+		@JsonValue
+		public String getValue() {
+			return text;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 *
+		 * @see java.lang.Enum#toString()
+		 */
+		@Override
+		public String toString() {
+			return text;
+		}
 	}
 
-	public String paraGuardar(){
+	public String paraGuardar() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(id);
 		sb.append('|');
@@ -204,11 +214,11 @@ public class Pelicula implements Comparable<Pelicula> {
 		sb.append('|');
 		sb.append(comprar);
 		sb.append('|');
-		trailers.forEach(trailer ->{
+		trailers.forEach(trailer -> {
 			sb.append(trailers);
 			sb.append(" ");
 		});
-		sb.substring(sb.length() -1);
+		sb.substring(sb.length() - 1);
 		sb.append('|');
 		sb.append(imagen);
 		return sb.toString();
