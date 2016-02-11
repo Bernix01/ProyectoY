@@ -125,7 +125,8 @@ public class ProyectoY {
 			bw = new BufferedWriter(fw);
 			grafo.vertexSet().forEach(pelicula -> {
 				try {
-					bw.write(pelicula.paraGuardar() + "\n");
+					bw.write(pelicula.paraGuardar());
+					bw.newLine();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
