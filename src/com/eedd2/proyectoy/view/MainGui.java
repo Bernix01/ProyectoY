@@ -1,23 +1,3 @@
-/**
- *
- */
-package com.eedd2.proyectoy.view;
-
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import javax.swing.JOptionPane;
-
-import org.jgrapht.DirectedGraph;
-import org.jgrapht.UndirectedGraph;
-import org.jgrapht.graph.Subgraph;
-import org.jgrapht.graph.UndirectedSubgraph;
-import org.jgrapht.traverse.BreadthFirstIterator;
 
 import com.eedd2.proyectoy.ProyectoY;
 import com.eedd2.proyectoy.graph.ProyectoYEdge;
@@ -38,19 +18,33 @@ public class MainGui {
 		Set<Pelicula> res = new HashSet<>();
 
 		// Pedir la pelicula a buscar
-		String palabra = JOptionPane.showInputDialog("Proyecto Y - Peliculas");
+		String palabra = JOptionPane.showInputDialog("Proyecto Y - Ingrese palabra para buscar coincidencias:");
 		// obtener todas las posibles peliculas que contengan esa palabra,
 		// ignorando mayusculas y minusculas
 		List<Pelicula> coincidencias = orbe.vertexSet().stream()
-				.filter(pelicula -> pelicula.getNombre().toLowerCase().contains(palabra.toLowerCase()))
+				.filter(pelicula -> pelicula.getNombre().toLowerCase().trim().contains(palabra.trim().toLowerCase()))
 				.collect(Collectors.toList());
-
+		//Crea la lista de opciones
+		String opciones = "";
+		int i=0;
+		for (Pelicula a:coincidencias){
+			opciones+=i+"."+a.getNombre()+"\n";
+			i++;
+		}
+		
 		// pidiendo la opcion que se quiere buscar
-		int opt = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la pelicula...\n" + coincidencias));
-
+		int opt = Integer.parseInt(JOptionPane.showInputDialog(null,opciones));
+		
+		
 		// almacenando la pelicula buscada
 		Pelicula prototipo = coincidencias.get(opt);
-
+		
+		//Aumentando las vistas de la pelicula seleccionada
+		coincidencias.get(opt).voteUp();
+		
+		//sobreescribe la base de datos
+		ProyectoY.guardar(orbe);
+		
 		// por cada coincidencia, se ejecuta una busqueda en anchura y se
 		// almacena en un set
 		coincidencias.forEach(peli -> {
